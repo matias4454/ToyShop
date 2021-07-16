@@ -1,0 +1,69 @@
+<div>
+
+    <div class="text-center">
+        <h2>Toys</h2>
+    </div>
+
+
+    <!--<div class="container">
+        <div class="row">-->
+        <div *ngIf="getSelectedIndex() > -1">
+            <h3>Selected product: {{getSelectedProducts()[0].getName()}}</h3>
+                <table class="table table-striped table-bordered">
+                    <thead class="table table-primary">
+                    <tr>                        
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Category</th>                    
+                        <th>Description</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let product of getSelectedProducts();">
+                           <td>{{product.getId()}}</td>
+                           <td>{{product.getName()}}</td>
+                           <td>{{product.getCategory()}}</td>                    
+                           <td>{{product.getDescription()}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <p class="btn btn-primary" (click)="setSelectedIndex(-1)">Back</p>
+                </div>
+                
+        </div>
+        <div *ngIf="getSelectedIndex() < 0">
+                <table class="table table-striped table-bordered">
+                    <thead class="table table-primary">
+                    <tr>                        
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Category</th>                    
+                        <th>Selected</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let product of getList(); let i = index">
+                        <td>{{product.getId()}}</td>
+                        <td>{{product.getName()}}</td>
+                        <td>{{product.getCategory()}}</td>                    
+                        <td>
+                            <button class="btn-primary btn-small" (click)="setSelectedIndex(product.getId())">Select</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <p><a class="btn btn-primary" routerLink='\' routerLinkActive="active" >Home</a>
+                </div>
+            
+        </div>
+        
+
+       <!-- </div>
+    </div>-->
+
+
+</div>

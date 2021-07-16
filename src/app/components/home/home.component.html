@@ -1,0 +1,23 @@
+<div class="text-center">
+    <div class="text-center"><h2>Welcome to ToyShop</h2></div>
+    <div class="text-center"><h5>This is main view for routing testing</h5></div>
+    <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <p><h4>Toys</h4>
+        <p><h5>This sub-page contains information about various toys</h5>
+        <p><a [routerLink]="['/Toys', {name: 'toys'}]" routerLinkActive="active" class="btn btn-primary">View more</a>
+      </div>
+      <div class="col-4">
+        <p><h4>Accessories</h4>
+        <p><h5>This sub-page contains information about various accessories</h5>
+        <p><a [routerLink]="['/Accessories', {name: 'accessories'}]" routerLinkActive="active" class="btn btn-primary">View more</a><!--Accessories-->
+      </div>
+      <div class="col-4">
+        <p><h4>Special offers</h4>
+        <p><h5>This sub-page contains information about special offers</h5>
+        <p><a [routerLink]="['/SpecOffers', {name: 'offers'}]" routerLinkActive="active" class="btn btn-primary">View more</a><!--SpecOffers-->
+      </div>
+    </div>
+  </div>
+</div>
