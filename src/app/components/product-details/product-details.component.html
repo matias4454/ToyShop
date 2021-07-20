@@ -1,0 +1,25 @@
+<div *ngIf="getSelectedIndex() > -1">
+<p>product-details works!</p>
+    <table class="table table-striped table-bordered">
+        <tr>                        
+            <th></th>
+            <th></th>            
+        </tr> 
+        <tr>
+            <td><b>Product ID</b></td>
+            <td>{{getSelectedProducts()[0].getId()}}</td>
+        </tr>
+        <tr>
+            <td><b>Product Name</b></td>
+            <td>{{getSelectedProducts()[0].getName()}}</td>
+        </tr>
+        <tr>
+            <td><b>Product Category</b></td>
+            <td>{{getSelectedProducts()[0].getCategory()}}</td>                                
+        </tr>
+        <tr>
+            <td><b>Product Description</b></td>
+            <td>{{getSelectedProducts()[0].getDescription()}}</td>                                
+        </tr>
+    </table>
+</div>
