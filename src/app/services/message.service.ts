@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
 export class MessageService {
   
 
-  private subject = new Subject<any>();
+  private subject = new ReplaySubject<any>(1);
   
   sendMessage(id: number)
   {
