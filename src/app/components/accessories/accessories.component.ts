@@ -36,5 +36,12 @@ export class AccessoriesComponent implements OnInit {
   {
     return this.dataService.getAccessories('');
   } 
+  getSelectedProduct(): Product
+  {
+    if(this.selectedIndex > -1)
+    {
+      return this.getList().filter(p => p.getId() == this.selectedIndex)[0];
+    }else return new Product(-1, '', '', '');
+  }
 
 }

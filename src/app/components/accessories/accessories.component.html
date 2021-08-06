@@ -5,7 +5,7 @@
     </div>
 
          <div *ngIf="getSelectedIndex() > -1">
-            <app-acc-details>
+            <app-acc-details [selectedProduct] = 'getSelectedProduct()'>
             </app-acc-details>
             
                 <div class="text-center">
