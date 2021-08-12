@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../../../services/data.service';
 import { Product } from '../../../models/Product';
 
@@ -11,6 +11,7 @@ import { Product } from '../../../models/Product';
 export class DetailsViewComponent implements OnInit {
     
     @Input() selectedProduct = new Product(-1, '', '', '');
+    @Output() btnBackClick = new EventEmitter<number>();
 
 
   constructor() 
@@ -19,5 +20,10 @@ export class DetailsViewComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  
+     public btnBackOnClick(ix : number) 
+    {
+        this.btnBackClick.emit(ix);
+    }
 
 }
