@@ -24,4 +24,16 @@ export class DataService {
         return items;
     
   }
+  getAccessories(category: string): Product[]
+  {
+        var items = new Array<Product>();
+        
+        for (let i = 0; i < 10; i++){ 
+            let product: Product = new Product(i, 'Item No. ' + i,
+            'RC accessories', '');
+            product.setDescription('This is description of ' + product.getName());
+            items.push(product);
+        }
+        return items;
+  }
 }
