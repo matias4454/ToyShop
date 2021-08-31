@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { DataService } from '../../services/data.service';
 import { Product } from '../../models/Product';
 import { MessageService } from '../../services/message.service';
+import { Cart } from 'src/app/models/Cart';
 
 @Component({
   selector: 'app-product-details',
@@ -15,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
     private selectedIndex: number;  
 
 
-  constructor(private dataSvc: DataService, private msgService: MessageService) 
+  constructor(private dataSvc: DataService, private msgService: MessageService, private cart: Cart) 
   {
     this.selectedIndex = -1;
       this.subscription = msgService.onMessage().subscribe(msg =>
@@ -49,6 +50,11 @@ export class ProductDetailsComponent implements OnInit {
     public getSelectedProducts() : Product[]
     {        
         return this.getList().filter(p => p.getId() == this.selectedIndex);
+    }
+    
+    public addToCart(p: Product)
+    {
+        this.cart.addLine(p);
     }
 
 }

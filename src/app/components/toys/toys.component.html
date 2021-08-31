@@ -1,6 +1,7 @@
 <div>
     <div class="text-center">
         <h2>Toys</h2>
+        <app-cart></app-cart>
     </div>
          <div *ngIf="getSelectedIndex() > -1">
             <app-product-details>
@@ -18,7 +19,7 @@
                         <th>Name</th>
                         <th>Category</th>                    
                         <th>Selected</th>
-                        <th></th>
+                        <th>Add to cart</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -28,6 +29,9 @@
                         <td>{{product.getCategory()}}</td>                    
                         <td class="text-xs-center">
                             <button class="btn btn-sm btn-primary" (click)="setSelectedIndex(product.getId())">Select</button>
+                        </td>
+                        <td class="text-xs-center">
+                            <button class="btn btn-sm btn-primary" (click)="addToCart(product)">Add</button>
                         </td>
                     </tr>
                     </tbody>

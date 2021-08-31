@@ -9,6 +9,8 @@ import { ToysComponent } from './components/toys/toys.component';
 import { AccessoriesComponent } from './components/accessories/accessories.component';
 import { SpecOffersComponent } from './components/spec-offers/spec-offers.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CartComponent } from './components/cart/cart.component';
+import { Cart } from './models/Cart';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     ToysComponent,
     AccessoriesComponent,
     SpecOffersComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [DataService],
+  providers: [DataService, Cart],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+<div class="pull-xs-right">
+<small>
+Cart:
+<span *ngIf="cart.itemCount == 1">
+{{ cart.itemCount }} product
+<!--{{ cart.cartPrice | currency:"zł":true:"2.2-2" }} -->
+</span>
+<span *ngIf="cart.itemCount > 1">
+{{ cart.itemCount }} products
+<!--{{ cart.cartPrice | currency:"zł":true:"2.2-2" }} -->
+</span>
+<span *ngIf="cart.itemCount == 0">
+(empty)
+</span>
+</small>
+<button class="btn btn-sm bg-inverse" [disabled]="cart.itemCount == 0">
+<i class="fa fa-shopping-cart"></i>
+</button>
+</div>

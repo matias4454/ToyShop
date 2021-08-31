@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { Product } from '../../models/Product';
 import { MessageService } from '../../services/message.service';
+import { Cart } from 'src/app/models/Cart';
 
 @Component({
   selector: 'app-toys',
@@ -11,7 +12,7 @@ import { MessageService } from '../../services/message.service';
 })
 export class ToysComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private dataSvc: DataService, private msgService: MessageService ) 
+  constructor(private route: ActivatedRoute, private dataSvc: DataService, private msgService: MessageService, private cart: Cart ) 
   {
     this.selectedIndex = -1;
   }
@@ -43,6 +44,11 @@ export class ToysComponent implements OnInit {
     public getSelectedProducts() : Product[]
     {
         return this.getList().filter(p => p.getId() == this.selectedIndex);
+    }
+    
+    public addToCart(p: Product)
+    {
+        this.cart.addLine(p);
     }
 
 }
