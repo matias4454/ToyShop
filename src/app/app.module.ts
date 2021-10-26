@@ -11,6 +11,7 @@ import { SpecOffersComponent } from './components/spec-offers/spec-offers.compon
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CartComponent } from './components/cart/cart.component';
 import { Cart } from './models/Cart';
+import { DetailsViewComponent } from './components/accessories/details-view/details-view.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Cart } from './models/Cart';
     AccessoriesComponent,
     SpecOffersComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    DetailsViewComponent
   ],
   imports: [
     BrowserModule,
