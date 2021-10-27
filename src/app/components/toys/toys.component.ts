@@ -15,20 +15,35 @@ export class ToysComponent implements OnInit {
   constructor(private route: ActivatedRoute, private dataSvc: DataService, private msgService: MessageService, private cart: Cart ) 
   {
     this.selectedIndex = -1;
+    this.toysList = [];
   }
 
   ngOnInit(): void {
     //let param = this.route.snapshot.paramMap.get('name');
     //console.log('Param value: ' + param);
     //window.alert('Param value: ' + param);
+    this.dataSvc.getToysAsync('').then(data => 
+    {
+        this.toysList = data;
+        this.msgService.sendMessage(this.getSelectedIndex());
+    }).catch(reason => window.alert(JSON.stringify(reason)));
   }
   
   private selectedIndex: number;  
+  private toysList: Product[];
+  
+  
   
     public getList(): Product[]    
     {
-        return this.dataSvc.getToys('');
+        return this.toysList;
     }
+    
+    public async getListAsync(): Promise<Product[]>
+    {
+        return await this.dataSvc.getToysAsync('');
+    }
+
     
     public getSelectedIndex() : number
     {

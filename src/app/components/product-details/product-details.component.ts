@@ -14,6 +14,7 @@ export class ProductDetailsComponent implements OnInit {
 
     private subscription: Subscription;
     private selectedIndex: number;  
+    
 
 
   constructor(private dataSvc: DataService, private msgService: MessageService, private cart: Cart) 
@@ -27,7 +28,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    
   }
   
 
